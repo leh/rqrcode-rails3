@@ -10,8 +10,8 @@ module RQRCode
         #   color  - Foreground color for the code (e.g. "000000" or :black)
 
         def render(qrcode, options={})
-          offset  = options[:offset].to_i || 0
-          width   = options[:width].to_i  || 11
+          offset  = (options[:offset] || 0).to_i
+          width   = (options[:width]  || 11).to_i
           color   = options[:color]       || "000"
 
           # height and width dependent on offset and QR complexity
